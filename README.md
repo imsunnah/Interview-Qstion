@@ -1,4 +1,4 @@
-﻿# Interview-Qstion
+﻿# PHP
  (1)	What are the differences between echo and print in PHP?
 ```bash
  echo: Can take multiple parameters (though rarely used this way) and has no return value. It is slightly faster.
@@ -64,3 +64,68 @@ PDO (PHP Data Objects): A consistent way to connect to various databases. It all
 ```bash
 SQL Injection is a security vulnerability where an attacker "injects" malicious SQL code into your query via user input (like a login form) to steal or delete data.
 ```
+﻿# OOP
+ (1) What is Doctrine PHP?
+ ```bash
+Doctrine is a set of PHP libraries focused on database storage and object mapping. Its most famous component is the ORM (Object-Relational Mapper), which allows you to write database queries using PHP objects instead of raw SQL. It is the default ORM for the Symfony framework.
+```
+ (2) What are Namespaces in PHP?
+  ```bash
+Namespaces are a way of encapsulating items. They solve two main problems:
+
+Name Collisions: They allow you to have two classes with the same name (e.g., two User classes) as long as they are in different namespaces.
+
+Organization: They help group related classes together, similar to directories in an operating system.
+
+Example: namespace App\Models;
+```
+(3) What are the different ORMs in PHP?
+  ```bash
+An ORM (Object-Relational Mapper) lets you interact with your database using an object-oriented syntax.
+
+Eloquent: Used primarily in Laravel. It uses the "Active Record" pattern.
+
+Doctrine: Used primarily in Symfony. It uses the "Data Mapper" pattern.
+
+Propel: An older, XML-based ORM.
+
+RedBeanPHP: A "zero-config" ORM that creates tables automatically.
+```
+(4) Sessions vs. Cookies in PHP
+  ```bash
+Cookies: Stored on the client-side (browser). They are useful for tracking users over long periods (e.g., "Remember Me" checkboxes) but are less secure because users can modify them.
+
+Sessions: Stored on the server-side. The browser only stores a "Session ID." They are more secure and are used to store sensitive data like login status.
+```
+(5) Throwable $th vs. Exception $e in PHP  
+```bash
+Exception $e: Only catches standard exceptions (user-defined or logical exceptions).
+
+Throwable $th: This is the interface that both Exception and Error implement. Since PHP 7, using Throwable allows you to catch both internal PHP errors (like TypeError) and standard exceptions in a single block.
+```
+(6) Exception vs. Error in PHP
+  ```bash
+Exception: Typically represents "recoverable" problems in the program logic (e.g., a missing file or failed API call).
+
+Error: Typically represents "unrecoverable" or serious engine problems (e.g., TypeError, ParseError, or ArithmeticError).
+```
+(7) PDO vs. MySQLi in PHP
+  ```bash
+Feature,PDO,MySQLi
+Database Support,"Supports 12 different drivers (MySQL, PostgreSQL, etc.)",Supports only MySQL.
+Parameters,"Named parameters (e.g., :id) and positional.",Only positional parameters (?).
+Security,Both support Prepared Statements.,Both support Prepared Statements.
+Performance,Slightly slower (due to abstraction layer).,Slightly faster for MySQL specifically.
+
+```
+(8) Differences between == and ===
+  ```bash
+== (Equal): Performs Type Juggling. It compares values after converting them to a common type.
+
+Example: 5 == "5" is True.
+
+=== (Identical): No type conversion. It compares both the Value and the Data Type.
+
+Example: 5 === "5" is False.
+```
+

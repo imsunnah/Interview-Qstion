@@ -129,7 +129,7 @@ Example: 5 == "5" is True.
 Example: 5 === "5" is False.
 ```
 
-# Laravel
+# PHP
  
  1. What is Object-Oriented Programming (OOP)?
     ```bash
@@ -333,5 +333,6 @@ A relationship where a model can belong to more than one other model on a single
 
 Example: A Comment model might belong to both a Post model and a Video model.
 ```
+
 
 

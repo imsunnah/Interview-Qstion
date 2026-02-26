@@ -1,4 +1,5 @@
 ﻿# PHP
+ 
  (1)	What are the differences between echo and print in PHP?
 ```bash
  echo: Can take multiple parameters (though rarely used this way) and has no return value. It is slightly faster.
@@ -129,6 +130,7 @@ Example: 5 === "5" is False.
 ```
 
 ﻿# OOP
+ 
  1. What is Object-Oriented Programming (OOP)?
     ```bash
     OOP is a programming paradigm based on the concept of "objects," which can contain data (properties) and code (methods). Instead of writing a long list of instructions (procedural), you organize your code into modular pieces that interact with each other. It rests on four pillars: Encapsulation, Abstraction, Inheritance, and Polymorphism.
@@ -191,7 +193,8 @@ catch: Defines what to do if an error occurs.
 
 finally: Code that runs regardless of whether an error happened (e.g., closing a file).
 ```
-#Laravel
+# Laravel
+
 (1)	What is the Middleware in Laravel?
 ```bash
 Middleware acts as a bridge or a "filter" between a request and your application. It intercepts incoming HTTP requests.
@@ -330,3 +333,4 @@ A relationship where a model can belong to more than one other model on a single
 
 Example: A Comment model might belong to both a Post model and a Video model.
 ```
+

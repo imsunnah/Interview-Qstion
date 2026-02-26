@@ -333,6 +333,130 @@ A relationship where a model can belong to more than one other model on a single
 
 Example: A Comment model might belong to both a Post model and a Video model.
 ```
+(26)	Events vs Listeners in Laravel?
+   ```bash
+     Events: A way to say, "Something has happened!" (e.g., OrderPlaced). It’s just a data container.
+     Listeners: The classes that wait for that specific event and perform an action (e.g., SendOrderConfirmationEmail). This decouples your code.
+   ```
+(27)	 How to enable Maintenance Mode in Laravel application?
+   ```bash
+You can disable your application for updates using Artisan:
+
+Enable: php artisan down
+
+Disable: php artisan up
+
+Bypass: php artisan down --secret="my-password" (allows you to view the site while others see a 503).
+   ```
+(28)	 What do you know about Route Model Binding in Laravel?
+   ```bash
+Instead of looking up a user manually:
+public function show($id) { $user = User::find($id); ... }
+Laravel does it automatically if you type-hint the model:
+public function show(User $user) { ... }
+   ```
+(29)	 Gates vs Policies in Laravel?
+   ```bash
+Both handle Authorization:
+
+Gates: Closure-based, best for simple actions not tied to a specific model (e.g., can-access-dashboard).
+
+Policies: Class-based logic tied to a specific Model (e.g., PostPolicy to determine who can update a Post).
+   ```
+(30)	 What do you know about Task Scheduling in Laravel?
+   ```bash
+Instead of managing multiple Cron jobs on your server, you define them in routes/console.php (or App\Console\Kernel). You only need one Cron entry on your server to run php artisan schedule:run every minute
+   ```
+(31)	What is Database Transaction?
+   ```bash
+A way to ensure multiple database operations either all succeed or all fail. If one step fails, the database "rolls back" to its original state, preventing data corruption.
+
+   ```
+(32)	What are SQL Joins?
+   ```bash
+Inner Join: Only rows with matches in both tables.
+
+Left Join: All rows from the left table, plus matches from the right.
+
+Right Join: All rows from the right table, plus matches from the left.
+   ```
+(33)	What is the difference between authentication and authorization?
+   ```bash
+Authentication: Who are you? (Login)
+
+Authorization: What are you allowed to do? (Permissions)
+   ```
+(34)	What are SQL Injection (SQLi) ?
+   ```bash
+A vulnerability where an attacker inserts malicious SQL code into a query. Laravel prevents this by default by using PDO parameter binding, which treats input as literal text, not executable code.
+```
+(35)	How to secure your Laravel application?
+   ```bash
+Use HTTPS.
+Keep dependencies updated (composer update).
+Use built-in CSRF protection.
+Escape output (Blade {{ }} does this automatically).
+Avoid using raw queries with user input.
+```
+(36)	Hashing vs Encryption vs Encoding ?
+   ```bash
+Hashing: One-way (cannot be reversed). Used for passwords.
+Encryption: Two-way (can be decrypted with a key). Used for sensitive data like API keys.
+Encoding: Simply changing the format (e.g., Base64). Not for security; used for data transmission.
+```
+(37)	What is the difference between lazy loading & eager loading?
+   ```bash
+Lazy Loading: Loading relationship data only when you access it (causes $N+1$ query issues).
+Eager Loading: Loading relationships upfront using with().
+```
+(38)	 What is unit testing?
+   ```bash
+Testing the smallest "unit" of code (like a single method) in isolation from the database or internet to ensure it logic is perfect.
+```
+(40)	 Why use JWT?
+   ```bash
+A compact, URL-safe way of representing claims between two parties.
+
+Why use it? It is stateless. The server doesn't need to store session data; the token itself contains the user info and a signature to prove it hasn't been tampered with.
+
+```
+(41)	 Explain the concept of Laravel Dependency Injection and its benefits.
+   ```bash
+The practice of passing a class's dependencies into its constructor or methods.
+
+Benefit: Makes code easier to test (you can swap real classes for "mocks") and reduces tight coupling.
+```
+(42)	 What is Laravel Telescope, and how does it aid in debugging and monitoring Laravel applications?
+   ```bash
+An advanced debugging dashboard. It monitors every request, exception, log entry, database query, and mail sent by your app during development.
+```
+(43)	What is Laravel Passport, and how does it facilitate OAuth2 authentication in Laravel applications?
+   ```bash
+A full OAuth2 server implementation. Use this if you need to support third-party apps, "Login with My-App" features, or complex scopes.
+```
+(44)	 What is method injection in Laravel?
+   ```bash
+Injecting a dependency directly into a controller method instead of the constructor. Laravel automatically resolves it via the Service Container.
+```
+(45)	What is "Redis," and how does Laravel utilize it for Queues and Caching?
+  ```bash
+An "in-memory" data store.
+
+Caching: Faster than files/database because it lives in RAM.
+
+Queues: Acts as a lightning-fast "waiting room" for background jobs.
+```
+
+(46)	What is the difference between Laravel Sanctum and Laravel Passport?
+  ```bash
+Sanctum: Lightweight, uses cookies/simple tokens. Best for SPAs (Vue/React) and simple mobile apps.
+
+Passport: Heavyweight, full OAuth2. Best for huge platforms that need to issue tokens to other developers/services.
+```
+
+
+
+
 
 
 
